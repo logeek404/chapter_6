@@ -23,8 +23,10 @@ public class PlatformerPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         
-        
+
+
         // moving on x-axies
         float deltaX = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         Vector2 movement = new Vector2(deltaX, _body.velocity.y);
@@ -81,7 +83,7 @@ public class PlatformerPlayer : MonoBehaviour
         }
 
         // couter-scaling  on  moving platform
-    Vector3 pScale = Vector3.one;
+       Vector3 pScale = Vector3.one;
         if (platform != null)
         {
             pScale = platform.transform.localScale;
@@ -95,6 +97,12 @@ public class PlatformerPlayer : MonoBehaviour
 
         }
 
+        //reset after falling out of scene
+        if (transform.position.y <= -20 )
+        {
+            transform.position = new Vector3(-2, 10, transform.position.z);
+            
+        }
 
 
     }
