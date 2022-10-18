@@ -8,7 +8,7 @@ public class MovingPlatform : MonoBehaviour
     public Vector3 finishPos = Vector3.zero;
     public float speed = 0.5f;
     private Vector3 _startPos;
-    private float _trackPecent = 0;
+    private float _trackPecent = 0.1f;
     private int _direction = 1;
 
     //Gizmos by implementing abstract method
